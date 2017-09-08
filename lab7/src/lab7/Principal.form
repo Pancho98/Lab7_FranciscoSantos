@@ -141,7 +141,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jb_cargar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cargar"/>
+            <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_cargarMouseClicked"/>

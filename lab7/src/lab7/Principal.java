@@ -7,6 +7,7 @@ package lab7;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class Principal extends javax.swing.JFrame {
@@ -69,7 +70,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel13.setText("Lugar");
 
-        jb_cargar.setText("Cargar");
+        jb_cargar.setText("Crear");
         jb_cargar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_cargarMouseClicked(evt);
@@ -273,10 +274,25 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_crearMouseClicked
 
     private void jb_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarMouseClicked
-        
+        jd_persona.pack();
+        jd_persona.setModal(true);
+        jd_persona.setVisible(true);
+        jd_persona.setLocationRelativeTo(this);
     }//GEN-LAST:event_jb_registrarMouseClicked
 
     private void jb_cargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cargarMouseClicked
+        Persona p = new Persona(tf_nombrep.getText(),Integer.parseInt(tf_id.getText()),Integer.parseInt(tf_edad.getText()),Integer.parseInt(tf_altura.getText()),tf_profecion.getText(),tf_lugar.getText());
+        AdminPersonas ap = new AdminPersonas("./per");
+        ap.cargarArchivo();
+        ap.setPersona(p);
+        ap.escribirArchivo();
+        JOptionPane.showMessageDialog(this, "se guardo la persona exitosamente");
+        tf_nombrep.setText("");
+        tf_id.setText("");
+        tf_edad.setText("");
+        tf_altura.setText("");
+        tf_profecion.setText("");
+        tf_lugar.setText("");
         
     }//GEN-LAST:event_jb_cargarMouseClicked
 
