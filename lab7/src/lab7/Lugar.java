@@ -59,8 +59,5 @@ public class Lugar extends Thread {
         this.año = año;
     }
 
-    public void run() {
-
-    }
-
+    
 }

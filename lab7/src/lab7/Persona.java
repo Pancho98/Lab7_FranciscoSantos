@@ -13,16 +13,19 @@ public class Persona extends Thread{
     private int edad;
     private int altura;
     private String profecion;
+    private String lugar;
 
     public Persona() {
     }
 
-    public Persona(String nombre, int ID, int edad, int altura, String profecion) {
+    public Persona(String nombre, int ID, int edad, int altura, String profecion, String lugar) {
         this.nombre = nombre;
         this.ID = ID;
         this.edad = edad;
         this.altura = altura;
         this.profecion = profecion;
+        this.lugar=lugar;
+        
     }
 
     public String getNombre() {
@@ -64,8 +67,14 @@ public class Persona extends Thread{
     public void setProfecion(String profecion) {
         this.profecion = profecion;
     }
-    
-    public void run(){
-        
+
+    public String getLugar() {
+        return lugar;
     }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+    
+    
 }
