@@ -176,6 +176,9 @@ public class Principal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_crearMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_crearMouseEntered(evt);
+            }
         });
 
         jb_registrar.setText("Registrar");
@@ -266,6 +269,8 @@ public class Principal extends javax.swing.JFrame {
         habitantes=Integer.parseInt(tf_habitantes.getText());
         zona=tf_zona.getText();
         fundacion=Integer.parseInt(tf_fundacion.getText());
+        JFrame ff = new Lugares();
+        Lugar l = new Lugar(nombre,clima,extencion,habitantes,zona,fundacion);
         l.start();
         
     }//GEN-LAST:event_jb_crearMouseClicked
@@ -296,6 +301,10 @@ public class Principal extends javax.swing.JFrame {
     private void jb_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarMouseClicked
         
     }//GEN-LAST:event_jb_guardarMouseClicked
+
+    private void jb_crearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_crearMouseEntered
 
     
     public static void main(String args[]) {
@@ -364,5 +373,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_zona;
     // End of variables declaration//GEN-END:variables
 
-Lugar l = new Lugar();
+
 }

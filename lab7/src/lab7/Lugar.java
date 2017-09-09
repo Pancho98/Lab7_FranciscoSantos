@@ -100,7 +100,7 @@ public class Lugar extends Thread {
         fr.pack();
         fr.setLocationRelativeTo(null);
         fr.setVisible(true);
-        pl.jl_titulo.setText(nombre);
+       pl.jl_titulo.setText(nombre);
         while(true){
             for (int i = 0; i <p.size() ; i++) {
                 if (pl.jl_titulo.getText().equals(p.get(i).getLugar())) {
