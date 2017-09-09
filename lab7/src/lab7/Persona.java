@@ -4,16 +4,22 @@
 
 
 
+
+
+
+
 package lab7;
 
+import java.io.Serializable;
 
-public class Persona extends Thread{
+public class Persona implements Serializable {
     private String nombre;
     private int ID;
     private int edad;
     private int altura;
     private String profecion;
     private String lugar;
+    public static final long SerialVersionUID=333L;
 
     public Persona() {
     }
@@ -74,6 +80,11 @@ public class Persona extends Thread{
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", ID=" + ID + ", edad=" + edad + ", altura=" + altura + ", profecion=" + profecion + ", lugar=" + lugar + '}';
     }
     
     

@@ -16,8 +16,8 @@ public class Lugares extends javax.swing.JFrame {
      */
     public Lugares(Lugar l) {
         initComponents();
-        Nombre=l.getNombre();
-        Titulo.setText(Nombre);
+        
+        
     }
 
     public Lugares() {
@@ -34,16 +34,15 @@ public class Lugares extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Titulo = new javax.swing.JLabel();
+        jl_titulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Titulo.setText("xfgfgvhrh");
-        Titulo.setToolTipText("");
+        jl_titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_titulo.setToolTipText("");
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,14 +76,14 @@ public class Lugares extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(181, Short.MAX_VALUE))
@@ -129,9 +128,10 @@ public class Lugares extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Table;
-    private javax.swing.JLabel Titulo;
+    public javax.swing.JTable Table;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel jl_titulo;
     // End of variables declaration//GEN-END:variables
     String Nombre;
+    Lugar lu = new Lugar();
 }

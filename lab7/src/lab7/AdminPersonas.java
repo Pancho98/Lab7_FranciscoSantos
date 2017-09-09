@@ -33,8 +33,9 @@ public class AdminPersonas {
         this.listaPersonas.add(p);
     }
     
-    public void cargarArchivo(){
+    public void cargarArchivo(){  
         try {
+            
             listaPersonas = new ArrayList();
             Persona temp;
             if (archivo.exists()) {
@@ -51,6 +52,7 @@ public class AdminPersonas {
             }
         } catch (Exception e) {
         }
+    
     }
     
     public void escribirArchivo(){

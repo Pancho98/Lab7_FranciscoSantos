@@ -260,16 +260,13 @@ public class Principal extends javax.swing.JFrame {
         String nombre,clima,zona;
         int extencion,habitantes, fundacion;
         
-        nombre=tf_nombre.getText();
+        nombre=tf_nombre.getText().toLowerCase();
         clima=tf_clima.getText();
         extencion=Integer.parseInt(tf_extencion.getText());
         habitantes=Integer.parseInt(tf_habitantes.getText());
         zona=tf_zona.getText();
         fundacion=Integer.parseInt(tf_fundacion.getText());
-        JFrame jf= new Lugares(new Lugar(nombre, clima, habitantes, zona, fundacion));
-        jf.pack();
-        jf.setVisible(true);
-        jf.setLocationRelativeTo(this);
+        l.start();
         
     }//GEN-LAST:event_jb_crearMouseClicked
 
@@ -281,8 +278,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_registrarMouseClicked
 
     private void jb_cargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cargarMouseClicked
-        Persona p = new Persona(tf_nombrep.getText(),Integer.parseInt(tf_id.getText()),Integer.parseInt(tf_edad.getText()),Integer.parseInt(tf_altura.getText()),tf_profecion.getText(),tf_lugar.getText());
-        AdminPersonas ap = new AdminPersonas("./per");
+        Persona p = new Persona(tf_nombrep.getText(),Integer.parseInt(tf_id.getText()),Integer.parseInt(tf_edad.getText()),Integer.parseInt(tf_altura.getText()),tf_profecion.getText(),tf_lugar.getText().toLowerCase());
+        AdminPersonas ap = new AdminPersonas("./per.bin");
         ap.cargarArchivo();
         ap.setPersona(p);
         ap.escribirArchivo();

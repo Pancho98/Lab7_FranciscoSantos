@@ -1,5 +1,9 @@
 package lab7;
 
+import javax.swing.JFrame;
+import java.util.*;
+import javax.swing.table.DefaultTableModel;
+
 public class Lugar extends Thread {
 
     private String nombre;
@@ -7,17 +11,24 @@ public class Lugar extends Thread {
     private int habitantes;
     private String zona;
     private int año;
+    private JFrame fr;
+    private ArrayList<Persona> p =new ArrayList();
 
     public Lugar() {
     }
 
-    public Lugar(String nombre, String clima, int habitantes, String zona, int año) {
+    public Lugar(String nombre, String clima, int habitantes, String zona, int año, JFrame fr) {
         this.nombre = nombre;
         this.clima = clima;
         this.habitantes = habitantes;
         this.zona = zona;
         this.año = año;
+        this.fr = fr;
     }
+
+    
+
+    
 
     public String getNombre() {
         return nombre;
@@ -59,5 +70,54 @@ public class Lugar extends Thread {
         this.año = año;
     }
 
+    public JFrame getFr() {
+        return fr;
+    }
+
+    public void setFr(JFrame fr) {
+        this.fr = fr;
+    }
+
+    public ArrayList<Persona> getP() {
+        return p;
+    }
+
+    public void setP(ArrayList<Persona> p) {
+        this.p = p;
+    }
     
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+    
+    
+    @Override
+    public void run() {
+        Lugares pl = new Lugares();
+        fr = pl;
+        fr.pack();
+        fr.setLocationRelativeTo(null);
+        fr.setVisible(true);
+        pl.jl_titulo.setText(nombre);
+        while(true){
+            for (int i = 0; i <p.size() ; i++) {
+                if (pl.jl_titulo.getText().equals(p.get(i).getLugar())) {
+                    Persona pp = p.get(i);
+                    Object ob[] = {pp.getNombre(),pp.getID(),pp.getEdad(),pp.getAltura(),pp.getProfecion(),pp.getLugar()};
+                    DefaultTableModel tabla = (DefaultTableModel)pl.Table.getModel();
+                    tabla.addRow(ob);
+                    pl.Table.setModel(tabla);
+                    p.remove(p.get(i));
+                }
+            }
+        
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        }
+    }
+
 }
